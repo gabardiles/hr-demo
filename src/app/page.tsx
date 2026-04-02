@@ -1,18 +1,41 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 
+/* --- Data --- */
+
 const insights = [
-  { tag: "Talent", date: "Mars 2026", title: "Så behåller du dina bästa medarbetare 2026", excerpt: "Företag som investerar i kultur, tydligt syfte och individuell utveckling ser mätbart lägre personalomsättning." },
-  { tag: "Rekrytering", date: "Februari 2026", title: "Kraften i Second Opinion vid rekrytering", excerpt: "Att lägga till ett SHL-baserat analyslager i er process bromsar inte rekryteringen — det skärper den." },
-  { tag: "Ledarskap", date: "Januari 2026", title: "Bygga ledarskap genom utvecklingsprogram", excerpt: "IPU:s pedagogiska dialogverktyg skapar bestående beteendeförändring. Vi delar vad vi sett fungera." },
+  { tag: "Talent", title: "Så behåller du dina bästa medarbetare 2026" },
+  { tag: "Rekrytering", title: "Kraften i Second Opinion vid rekrytering" },
+  { tag: "Ledarskap", title: "Bygga ledarskap genom utvecklingsprogram" },
 ];
 
-const teamQuotes = [
-  { quote: "Enoem hittade en produktionschef åt oss som vi själva letat efter i sex månader. Inom tio veckor hade vi vår kandidat.", author: "Driftchef", company: "Tillverkningsföretag, Halland" },
-  { quote: "Second Opinion-analysen gav vår styrelse trygghet att genomföra en svår rekrytering.", author: "VD", company: "Teknikföretag, Göteborg" },
-  { quote: "Andreas och Carin är uppfriskande ärliga. Ingen överförsäljning. Bara gedigen rådgivning.", author: "HR-chef", company: "Detaljhandelsgrupp, Sverige" },
-  { quote: "Deras kandidatanalys gav oss ett språk för att prata om människor som vi inte hade haft annars.", author: "VD", company: "Infrastrukturföretag, Skåne" },
+const people = [
+  {
+    name: "Andreas Nilsson",
+    role: "Grundare",
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=500&fit=crop&crop=face",
+    quote: "Varje placering påverkar riktiga människors liv. Det ansvaret driver hur vi arbetar.",
+  },
+  {
+    name: "Carin Mossberger",
+    role: "Grundare",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=500&fit=crop&crop=face",
+    quote: "Vi tror på ärlighet framför allt. Våra kunder får vår verkliga bedömning, inte den optimistiska.",
+  },
+  {
+    name: "Driftchef",
+    role: "Klient, Halland",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop&crop=face",
+    quote: "Enoem hittade en produktionschef åt oss som vi själva letat efter i sex månader.",
+  },
+  {
+    name: "HR-chef",
+    role: "Klient, Sverige",
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=500&fit=crop&crop=face",
+    quote: "Andreas och Carin är uppfriskande ärliga. Ingen överförsäljning. Bara gedigen rådgivning.",
+  },
 ];
 
 const services = [
@@ -31,38 +54,48 @@ const vacancies = [
   "Spontanansökan",
 ];
 
+/* --- Page --- */
+
 export default function Home() {
   return (
     <>
-      {/* Hero */}
-      <section
-        style={{
-          minHeight: "70vh",
-          background: "linear-gradient(135deg, #555 0%, #888 100%)",
-          display: "flex",
-          alignItems: "flex-end",
-        }}
-      >
-        <div className="w-full max-w-7xl mx-auto px-8 lg:px-16 pb-20">
-          <p className="text-xs tracking-[0.25em] uppercase mb-5 fade-in" style={{ color: "rgba(255,255,255,0.45)", fontWeight: 400 }}>
+      {/* ===== HERO — full-bleed image like Plesner ===== */}
+      <section className="relative" style={{ minHeight: "75vh", display: "flex", alignItems: "flex-end" }}>
+        <Image
+          src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1800&h=1000&fit=crop"
+          alt="Svensk kust"
+          fill
+          className="object-cover"
+          priority
+          style={{ filter: "brightness(0.55)" }}
+        />
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-8 lg:px-16 pb-20">
+          <p className="text-xs tracking-[0.25em] uppercase mb-5" style={{ color: "rgba(255,255,255,0.45)", fontWeight: 400 }}>
             Strategisk HR · Halmstad, Sverige
           </p>
-          <h1 className="text-6xl sm:text-7xl lg:text-8xl fade-in" style={{ color: "rgba(255,255,255,0.8)", fontWeight: 200, letterSpacing: "-0.04em" }}>
+          <h1 className="text-6xl sm:text-7xl lg:text-8xl" style={{ color: "rgba(255,255,255,0.85)", fontWeight: 200, letterSpacing: "-0.04em" }}>
             Välkommen
           </h1>
         </div>
       </section>
 
-      {/* About banner */}
+      {/* ===== Breathing space ===== */}
+      <div style={{ height: "60px", backgroundColor: "#fff" }} />
+
+      {/* ===== About us banner — with background image ===== */}
       <Link href="/who-we-are" className="block" style={{ textDecoration: "none" }}>
-        <section
-          style={{ minHeight: "220px", backgroundColor: "#333", display: "flex", flexDirection: "column", justifyContent: "space-between", padding: "2.5rem 2rem" }}
-          className="lg:px-16 cursor-pointer group"
-        >
-          <p className="text-xs tracking-[0.25em] uppercase" style={{ color: "#D02C2B", fontWeight: 600, fontSize: "11px" }}>Om oss</p>
-          <div className="flex items-end justify-between">
-            <p className="text-2xl lg:text-3xl max-w-xl leading-snug" style={{ color: "rgba(255,255,255,0.8)", fontWeight: 300 }}>
-              Grundat 2008 av Andreas Nilsson och Carin Mossberger — byggt på ärlighet, etik och genuint engagemang för människor.
+        <section className="relative cursor-pointer group" style={{ minHeight: "260px", display: "flex", flexDirection: "column", justifyContent: "space-between", padding: "2.5rem 2rem" }}>
+          <Image
+            src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1800&h=500&fit=crop"
+            alt="Kontor"
+            fill
+            className="object-cover"
+            style={{ filter: "brightness(0.4)" }}
+          />
+          <p className="relative z-10 text-xs tracking-[0.25em] uppercase" style={{ color: "#D02C2B", fontWeight: 600, fontSize: "11px" }}>Om oss</p>
+          <div className="relative z-10 flex items-end justify-between lg:px-8">
+            <p className="text-2xl lg:text-3xl max-w-xl leading-snug" style={{ color: "rgba(255,255,255,0.85)", fontWeight: 300 }}>
+              Grundat 2008 av Andreas Nilsson och Carin Mossberger — byggt på ärlighet, etik och genuint engagemang.
             </p>
             <span className="text-xs tracking-[0.2em] uppercase hidden md:block group-hover:translate-x-1 transition-transform" style={{ color: "#D02C2B", fontWeight: 600 }}>
               Läs mer →
@@ -71,75 +104,113 @@ export default function Home() {
         </section>
       </Link>
 
-      {/* Insights */}
-      <section style={{ backgroundColor: "#F2F2F2" }} className="py-28">
+      {/* ===== NEWS — Plesner minimal: just label + headline, no cards ===== */}
+      <section style={{ backgroundColor: "#F8F8F8" }} className="py-28">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <FadeIn>
-            <p className="text-xs tracking-[0.25em] uppercase mb-4" style={{ color: "#999", fontWeight: 600, fontSize: "11px" }}>Insikter</p>
+            <p className="text-xs tracking-[0.25em] uppercase mb-4" style={{ color: "#BBB", fontWeight: 600, fontSize: "11px" }}>Insikter</p>
             <h2 className="text-4xl lg:text-5xl mb-16" style={{ color: "#111", fontWeight: 200, letterSpacing: "-0.03em" }}>
               Perspektiv på människor &amp; prestation
             </h2>
           </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-10">
             {insights.map((item, i) => (
               <FadeIn key={item.title} delay={i * 0.15}>
-                <article className="bg-white p-8 hover:shadow-lg transition-shadow cursor-pointer" style={{ transition: "box-shadow 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94)" }}>
-                  <div className="flex items-center gap-3 mb-6">
-                    <span className="text-xs tracking-wider uppercase px-2.5 py-1" style={{ backgroundColor: "rgba(208,44,43,0.08)", color: "#D02C2B", fontWeight: 600, fontSize: "10px" }}>{item.tag}</span>
-                    <span className="text-xs" style={{ color: "#BBB" }}>{item.date}</span>
-                  </div>
-                  <h3 className="text-xl mb-3 leading-snug" style={{ color: "#111", fontWeight: 300 }}>{item.title}</h3>
-                  <p className="text-sm leading-relaxed" style={{ color: "#999", fontWeight: 400 }}>{item.excerpt}</p>
-                </article>
+                <div className="cursor-pointer group">
+                  <p className="text-xs uppercase tracking-wider mb-3" style={{ color: "#BBB", fontWeight: 600 }}>{item.tag}</p>
+                  <h3 className="text-xl leading-snug group-hover:opacity-60" style={{ color: "#111", fontWeight: 300, transition: "opacity 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94)" }}>
+                    {item.title}
+                  </h3>
+                </div>
               </FadeIn>
             ))}
           </div>
           <FadeIn delay={0.5}>
-            <div className="mt-10">
+            <div className="mt-12">
               <span className="link-underline text-xs cursor-pointer" style={{ color: "#111", fontWeight: 600 }}>Visa alla</span>
             </div>
           </FadeIn>
         </div>
       </section>
 
-      {/* Team quotes */}
+      {/* ===== OUR PEOPLE — portrait carousel like Plesner ===== */}
       <section className="bg-white py-28">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <FadeIn>
-            <p className="text-xs tracking-[0.25em] uppercase mb-4" style={{ color: "#999", fontWeight: 600, fontSize: "11px" }}>Vårt team</p>
-            <h2 className="text-4xl lg:text-5xl mb-16" style={{ color: "#111", fontWeight: 200, letterSpacing: "-0.03em" }}>
-              Människorna bakom Enoem
+            <p className="text-xs tracking-[0.25em] uppercase mb-4" style={{ color: "#BBB", fontWeight: 600, fontSize: "11px" }}>Vårt team</p>
+            <h2 className="text-4xl lg:text-5xl mb-20" style={{ color: "#111", fontWeight: 200, letterSpacing: "-0.03em" }}>
+              Tillsammans når vi framgång
             </h2>
           </FadeIn>
+
+          {/* People grid with photos + quotes — Plesner style */}
           <FadeIn delay={0.2}>
-            <div className="max-w-3xl">
-              <blockquote className="mb-10">
-                <p className="text-2xl lg:text-3xl leading-relaxed mb-8" style={{ color: "#333", fontWeight: 200, fontStyle: "italic", letterSpacing: "-0.02em" }}>
-                  &ldquo;{teamQuotes[0].quote}&rdquo;
-                </p>
-                <footer>
-                  <p className="text-sm" style={{ color: "#111", fontWeight: 600 }}>{teamQuotes[0].author}</p>
-                  <p className="text-sm" style={{ color: "#BBB", fontWeight: 400 }}>{teamQuotes[0].company}</p>
-                </footer>
-              </blockquote>
-              <div className="flex gap-2.5">
-                {teamQuotes.map((_, i) => (
-                  <span key={i} className="block w-2 h-2 rounded-full" style={{ backgroundColor: i === 0 ? "#D02C2B" : "#DDD", transition: "background-color 0.45s" }} />
-                ))}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
+              {/* Left: quote */}
+              <div>
+                <blockquote>
+                  <p className="text-2xl lg:text-3xl leading-relaxed mb-8" style={{ color: "#333", fontWeight: 200, fontStyle: "italic", letterSpacing: "-0.02em" }}>
+                    &ldquo;{people[0].quote}&rdquo;
+                  </p>
+                  <footer>
+                    <p className="text-sm" style={{ color: "#111", fontWeight: 600 }}>{people[0].name}</p>
+                    <p className="text-sm" style={{ color: "#BBB", fontWeight: 400 }}>{people[0].role}</p>
+                  </footer>
+                </blockquote>
+              </div>
+              {/* Right: portrait photo */}
+              <div className="relative" style={{ height: "500px" }}>
+                <Image
+                  src={people[0].image}
+                  alt={people[0].name}
+                  fill
+                  className="object-cover"
+                />
               </div>
             </div>
           </FadeIn>
+
+          {/* Portrait row — 4 small portraits like Plesner's people carousel */}
+          <FadeIn delay={0.4}>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {people.map((p, i) => (
+                <div key={p.name} className="cursor-pointer group">
+                  <div className="relative mb-4" style={{ height: "280px" }}>
+                    <Image
+                      src={p.image}
+                      alt={p.name}
+                      fill
+                      className="object-cover group-hover:opacity-80"
+                      style={{ transition: "opacity 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94)" }}
+                    />
+                  </div>
+                  <p className="text-sm" style={{ color: "#111", fontWeight: 500 }}>{p.name}</p>
+                  <p className="text-xs" style={{ color: "#BBB", fontWeight: 400 }}>{p.role}</p>
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+
+          {/* Dots */}
+          <div className="flex gap-2.5 mt-10">
+            {[0,1,2,3].map((i) => (
+              <span key={i} className="block w-2 h-2 rounded-full" style={{ backgroundColor: i === 0 ? "#D02C2B" : "#DDD" }} />
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Services */}
+      {/* ===== SERVICES ===== */}
       <section id="services" className="bg-white py-28" style={{ borderTop: "1px solid #EBEBEB" }}>
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <FadeIn>
-            <p className="text-xs tracking-[0.25em] uppercase mb-4" style={{ color: "#999", fontWeight: 600, fontSize: "11px" }}>Tjänster</p>
-            <h2 className="text-4xl lg:text-5xl max-w-xl mb-16" style={{ color: "#111", fontWeight: 200, letterSpacing: "-0.03em" }}>
+            <p className="text-xs tracking-[0.25em] uppercase mb-4" style={{ color: "#BBB", fontWeight: 600, fontSize: "11px" }}>Tjänster</p>
+            <h2 className="text-4xl lg:text-5xl max-w-xl mb-6" style={{ color: "#111", fontWeight: 200, letterSpacing: "-0.03em" }}>
               Djup HR-expertis inom fyra områden
             </h2>
+            <p className="text-sm max-w-lg mb-16" style={{ color: "#999", fontWeight: 400 }}>
+              Ärlighet, tillit och beprövade metoder genomsyrar allt vi gör. Vi levererar rådgivning av högsta kvalitet och bygger starka, långvariga relationer med våra kunder.
+            </p>
           </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px" style={{ backgroundColor: "#EBEBEB" }}>
             {services.map((svc, i) => (
@@ -153,39 +224,64 @@ export default function Home() {
               </FadeIn>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Reach */}
-      <section style={{ backgroundColor: "#111" }} className="py-24">
-        <div className="max-w-7xl mx-auto px-8 lg:px-16 text-center">
-          <FadeIn>
-            <h2 className="text-4xl lg:text-5xl text-white mb-5" style={{ fontWeight: 200, letterSpacing: "-0.03em" }}>
-              Baserade i Halmstad, verksamma i hela Sverige
-            </h2>
-            <p className="text-sm max-w-lg mx-auto" style={{ color: "#777", fontWeight: 400 }}>
-              Våra rötter finns i Halland. Vår räckvidd sträcker sig från Malmö till Stockholm.
-            </p>
+          <FadeIn delay={0.4}>
+            <div className="mt-10">
+              <span className="link-underline text-xs cursor-pointer" style={{ color: "#111", fontWeight: 600 }}>Se våra tjänster</span>
+            </div>
           </FadeIn>
         </div>
       </section>
 
-      {/* Job vacancies — Plesner style */}
-      <section id="assignments" className="bg-white py-28">
-        <div className="max-w-7xl mx-auto px-8 lg:px-16">
+      {/* ===== REACH — full-bleed image section ===== */}
+      <section className="relative" style={{ minHeight: "400px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <Image
+          src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1800&h=600&fit=crop"
+          alt="Svensk stad"
+          fill
+          className="object-cover"
+          style={{ filter: "brightness(0.3)" }}
+        />
+        <div className="relative z-10 max-w-7xl mx-auto px-8 lg:px-16 text-center py-20">
           <FadeIn>
-            <h2 className="text-4xl lg:text-5xl mb-16" style={{ color: "#111", fontWeight: 200, letterSpacing: "-0.03em" }}>
+            <h2 className="text-4xl lg:text-5xl text-white mb-5" style={{ fontWeight: 200, letterSpacing: "-0.03em" }}>
+              Baserade i Halmstad, verksamma i hela Sverige
+            </h2>
+            <p className="text-sm max-w-lg mx-auto" style={{ color: "rgba(255,255,255,0.6)", fontWeight: 400 }}>
+              Våra rötter finns i Halland. Vår räckvidd sträcker sig från Malmö till Stockholm — överallt där talang och möjligheter möts.
+            </p>
+            <div className="mt-8">
+              <span className="link-underline text-xs cursor-pointer" style={{ color: "rgba(255,255,255,0.7)", fontWeight: 600 }}>Läs mer</span>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ===== CAREER intro + VACANCIES ===== */}
+      <section className="bg-white py-28">
+        <div className="max-w-7xl mx-auto px-8 lg:px-16">
+          {/* Career intro like Plesner's "Collaboration in focus" */}
+          <FadeIn>
+            <div className="max-w-2xl mb-20">
+              <h2 className="text-4xl lg:text-5xl mb-6" style={{ color: "#111", fontWeight: 200, letterSpacing: "-0.03em" }}>
+                Samarbete i fokus
+              </h2>
+              <p className="text-sm leading-relaxed mb-4" style={{ color: "#999", fontWeight: 400 }}>
+                Det ska upplevas enkelt och effektivt att samarbeta med oss. Vi har lång erfarenhet av att rekrytera och utvärdera nyckelpersoner till olika tjänster inom olika branscher. Tillsammans hittar vi ett upplägg som möter ert behov och era önskemål.
+              </p>
+              <span className="link-underline text-xs cursor-pointer" style={{ color: "#111", fontWeight: 600 }}>Läs mer</span>
+            </div>
+          </FadeIn>
+
+          {/* Vacancies list */}
+          <FadeIn delay={0.2}>
+            <h2 className="text-4xl lg:text-5xl mb-12" style={{ color: "#111", fontWeight: 200, letterSpacing: "-0.03em" }}>
               Lediga tjänster
             </h2>
           </FadeIn>
           <div>
             {vacancies.map((title, i) => (
-              <FadeIn key={title} delay={i * 0.08}>
-                <a
-                  href="#"
-                  className="block py-5 group"
-                  style={{ borderBottom: "1px solid #EBEBEB", textDecoration: "none" }}
-                >
+              <FadeIn key={title} delay={0.25 + i * 0.08}>
+                <a href="#" className="block py-5 group" style={{ borderBottom: "1px solid #EBEBEB", textDecoration: "none" }}>
                   <p className="text-base lg:text-lg group-hover:opacity-60" style={{ color: "#111", fontWeight: 300, transition: "opacity 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94)" }}>
                     {title}
                   </p>
@@ -193,7 +289,7 @@ export default function Home() {
               </FadeIn>
             ))}
           </div>
-          <FadeIn delay={0.5}>
+          <FadeIn delay={0.7}>
             <div className="mt-10">
               <span className="link-underline text-xs cursor-pointer" style={{ color: "#111", fontWeight: 600 }}>Visa alla tjänster</span>
             </div>
@@ -201,12 +297,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section id="contact" style={{ backgroundColor: "#F2F2F2" }} className="py-24">
+      {/* ===== CTA ===== */}
+      <section id="contact" style={{ backgroundColor: "#F8F8F8" }} className="py-28">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <FadeIn>
             <div className="max-w-xl">
-              <p className="text-xs tracking-[0.25em] uppercase mb-4" style={{ color: "#999", fontWeight: 600, fontSize: "11px" }}>Kontakt</p>
+              <p className="text-xs tracking-[0.25em] uppercase mb-4" style={{ color: "#BBB", fontWeight: 600, fontSize: "11px" }}>Kontakt</p>
               <h2 className="text-4xl lg:text-5xl mb-8" style={{ color: "#111", fontWeight: 200, letterSpacing: "-0.03em" }}>
                 Redo att hitta er nästa nyckelperson?
               </h2>
