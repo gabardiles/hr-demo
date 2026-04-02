@@ -2,106 +2,112 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-navy text-white">
+    <footer style={{ backgroundColor: "#1B2A3D" }} className="text-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          {/* Brand */}
-          <div className="md:col-span-1">
-            <div className="mb-4">
-              <div className="text-2xl font-bold tracking-[0.25em] text-white mb-1">ENOEM</div>
-              <div className="text-xs tracking-widest text-white/50 uppercase">Nilsson &amp; Mossberger</div>
-            </div>
-            <p className="text-sm text-white/60 leading-relaxed mt-4">
-              Tillsammans når vi framgång.
-            </p>
-            <p className="text-xs text-white/40 mt-1 italic">
-              Together we achieve success.
-            </p>
-          </div>
-
-          {/* Services */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+          {/* Brand + address */}
           <div>
-            <h4 className="text-xs font-semibold tracking-widest uppercase text-white/50 mb-4">
-              Services
-            </h4>
-            <ul className="space-y-2">
-              {["Search", "Recruitment", "Analysis", "Development"].map((s) => (
-                <li key={s}>
-                  <Link
-                    href={`/#services`}
-                    className="text-sm text-white/70 hover:text-white transition-colors"
-                  >
-                    {s}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Navigation */}
-          <div>
-            <h4 className="text-xs font-semibold tracking-widest uppercase text-white/50 mb-4">
-              Navigation
-            </h4>
-            <ul className="space-y-2">
-              {[
-                { label: "Home", href: "/" },
-                { label: "Who We Are", href: "/who-we-are" },
-                { label: "Current Assignments", href: "/#assignments" },
-                { label: "Contact", href: "/#contact" },
-              ].map(({ label, href }) => (
-                <li key={label}>
-                  <Link
-                    href={href}
-                    className="text-sm text-white/70 hover:text-white transition-colors"
-                  >
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div id="contact">
-            <h4 className="text-xs font-semibold tracking-widest uppercase text-white/50 mb-4">
-              Contact
-            </h4>
-            <address className="not-italic space-y-3">
-              <div>
-                <p className="text-sm text-white/90">Klammerdammsgatan 2</p>
-                <p className="text-sm text-white/90">302 43 Halmstad</p>
-                <p className="text-sm text-white/90">Sweden</p>
-              </div>
-              <div className="space-y-1 pt-1">
-                <p className="text-xs text-white/50 uppercase tracking-wider">Andreas Nilsson</p>
-                <a href="tel:+46701460391" className="block text-sm text-white/80 hover:text-white transition-colors">
-                  0701-460 391
-                </a>
-                <a href="mailto:nilsson@enoem.se" className="block text-sm text-white/80 hover:text-white transition-colors">
-                  nilsson@enoem.se
-                </a>
-              </div>
-              <div className="space-y-1 pt-1">
-                <p className="text-xs text-white/50 uppercase tracking-wider">Carin Mossberger</p>
-                <a href="tel:+46701460390" className="block text-sm text-white/80 hover:text-white transition-colors">
-                  0701-460 390
-                </a>
-                <a href="mailto:mossberger@enoem.se" className="block text-sm text-white/80 hover:text-white transition-colors">
-                  mossberger@enoem.se
-                </a>
-              </div>
+            <div className="text-xl font-bold tracking-[0.3em] text-white mb-4">ENOEM</div>
+            <address className="not-italic space-y-1 text-sm" style={{ color: "rgba(255,255,255,0.6)" }}>
+              <p>Klammerdammsgatan 2</p>
+              <p>302 43 Halmstad</p>
+              <p>Sweden</p>
             </address>
+          </div>
+
+          {/* Contacts */}
+          <div className="space-y-6">
+            <div>
+              <p className="text-xs tracking-widest uppercase mb-2" style={{ color: "rgba(255,255,255,0.4)" }}>
+                Andreas Nilsson
+              </p>
+              <a
+                href="tel:+46701460391"
+                className="block text-sm hover:text-white transition-colors"
+                style={{ color: "rgba(255,255,255,0.7)" }}
+              >
+                0701-460 391
+              </a>
+              <a
+                href="mailto:nilsson@enoem.se"
+                className="block text-sm hover:text-white transition-colors"
+                style={{ color: "rgba(255,255,255,0.7)" }}
+              >
+                nilsson@enoem.se
+              </a>
+            </div>
+            <div>
+              <p className="text-xs tracking-widest uppercase mb-2" style={{ color: "rgba(255,255,255,0.4)" }}>
+                Carin Mossberger
+              </p>
+              <a
+                href="tel:+46701460390"
+                className="block text-sm hover:text-white transition-colors"
+                style={{ color: "rgba(255,255,255,0.7)" }}
+              >
+                0701-460 390
+              </a>
+              <a
+                href="mailto:mossberger@enoem.se"
+                className="block text-sm hover:text-white transition-colors"
+                style={{ color: "rgba(255,255,255,0.7)" }}
+              >
+                mossberger@enoem.se
+              </a>
+            </div>
+          </div>
+
+          {/* Links + social */}
+          <div className="space-y-6">
+            <div className="flex flex-col gap-2">
+              <p className="text-xs tracking-widest uppercase mb-1" style={{ color: "rgba(255,255,255,0.4)" }}>
+                Quick links
+              </p>
+              {[
+                { label: "Who We Are", href: "/who-we-are" },
+                { label: "Privacy Policy", href: "/privacy" },
+                { label: "Cookie Policy", href: "/cookies" },
+              ].map(({ label, href }) => (
+                <Link
+                  key={label}
+                  href={href}
+                  className="text-sm hover:text-white transition-colors"
+                  style={{ color: "rgba(255,255,255,0.6)" }}
+                >
+                  {label}
+                </Link>
+              ))}
+            </div>
+            <div className="flex gap-4">
+              <a
+                href="https://www.linkedin.com/company/enoem"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="text-sm hover:text-white transition-colors"
+                style={{ color: "rgba(255,255,255,0.6)" }}
+              >
+                LinkedIn
+              </a>
+              <a
+                href="https://www.facebook.com/enoem"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="text-sm hover:text-white transition-colors"
+                style={{ color: "rgba(255,255,255,0.6)" }}
+              >
+                Facebook
+              </a>
+            </div>
           </div>
         </div>
 
-        <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-          <p className="text-xs text-white/40">
-            © {new Date().getFullYear()} Enoem AB — Nilsson &amp; Mossberger. All rights reserved.
-          </p>
-          <p className="text-xs text-white/30">
-            enoem.se · Halmstad, Sweden
-          </p>
+        <div
+          className="pt-8 text-xs"
+          style={{ borderTop: "1px solid rgba(255,255,255,0.1)", color: "rgba(255,255,255,0.35)" }}
+        >
+          © {new Date().getFullYear()} Enoem AB — Nilsson &amp; Mossberger
         </div>
       </div>
     </footer>
