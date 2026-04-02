@@ -46,8 +46,8 @@ export default function Home() {
       {/* ===== HERO ===== */}
       <section className="relative" style={{ minHeight: "75vh", display: "flex", alignItems: "flex-end" }}>
         <Image
-          src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1800&h=1000&fit=crop"
-          alt="Landskap"
+          src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1800&h=1000&fit=crop"
+          alt="Människor som samarbetar"
           fill
           className="object-cover"
           priority
@@ -124,6 +124,20 @@ export default function Home() {
           </div>
         </section>
       </Link>
+
+      {/* ===== CLIENTS ===== */}
+      <section className="bg-white py-20">
+        <div className="max-w-7xl mx-auto px-8 lg:px-16">
+          <FadeIn>
+            <p className="text-xs tracking-[0.25em] uppercase mb-10 text-center" style={{ color: "#BBB", fontWeight: 600, fontSize: "11px" }}>Uppdragsgivare som valt oss</p>
+            <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-4">
+              {["Almi", "Modulpac AB", "Robatech Nordic", "Bertegruppen", "Tomsgruppen", "RAM Nordic", "Primdal ESG", "Naijteknik", "Decon", "Malte", "LBC-Ängstorp", "Kenneths Bygg"].map((name) => (
+                <span key={name} className="text-sm" style={{ color: "#CCC", fontWeight: 400, whiteSpace: "nowrap" }}>{name}</span>
+              ))}
+            </div>
+          </FadeIn>
+        </div>
+      </section>
 
       {/* ===== OUR PEOPLE ===== */}
       <section className="bg-white py-28">
