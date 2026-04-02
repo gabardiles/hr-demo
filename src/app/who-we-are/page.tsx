@@ -137,9 +137,9 @@ export default function WhoWeAre() {
                 Tillsammans når vi framgång
               </p>
             </blockquote>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/#contact" className="px-8 py-3.5 text-xs tracking-[0.15em] uppercase hover:opacity-80" style={{ backgroundColor: "#D02C2B", color: "#fff", fontWeight: 600 }}>Kontakta oss</Link>
-              <Link href="/" className="px-8 py-3.5 text-xs tracking-[0.15em] uppercase hover:opacity-80" style={{ border: "1px solid #CCC", color: "#333", fontWeight: 600 }}>Tillbaka till startsidan</Link>
+            <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+              <Link href="/#contact" className="block text-center px-8 py-3.5 text-xs tracking-[0.15em] uppercase hover:opacity-80" style={{ backgroundColor: "#D02C2B", color: "#fff", fontWeight: 600 }}>Kontakta oss</Link>
+              <Link href="/" className="block text-center px-8 py-3.5 text-xs tracking-[0.15em] uppercase hover:opacity-80" style={{ border: "1px solid #CCC", color: "#333", fontWeight: 600 }}>Tillbaka till startsidan</Link>
             </div>
           </FadeIn>
         </div>

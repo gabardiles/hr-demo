@@ -57,10 +57,10 @@ export default function Home() {
           <h1 className="text-5xl sm:text-6xl lg:text-8xl mb-8" style={{ color: "rgba(255,255,255,0.85)", fontWeight: 200, letterSpacing: "-0.04em" }}>
             Tillsammans når vi<br />framgång
           </h1>
-          <div className="flex flex-wrap gap-4">
-            <a href="#services" className="px-6 py-3 text-xs tracking-[0.15em] uppercase" style={{ border: "1px solid rgba(255,255,255,0.5)", color: "#fff", fontWeight: 500 }}>För uppdragsgivare</a>
-            <a href="#assignments" className="px-6 py-3 text-xs tracking-[0.15em] uppercase" style={{ border: "1px solid rgba(255,255,255,0.5)", color: "#fff", fontWeight: 500 }}>Aktuella tjänster</a>
-            <a href="#contact" className="px-6 py-3 text-xs tracking-[0.15em] uppercase" style={{ border: "1px solid rgba(255,255,255,0.5)", color: "#fff", fontWeight: 500 }}>För kandidater</a>
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <a href="#services" className="block text-center px-6 py-3 text-xs tracking-[0.15em] uppercase" style={{ border: "1px solid rgba(255,255,255,0.5)", color: "#fff", fontWeight: 500 }}>För uppdragsgivare</a>
+            <a href="#assignments" className="block text-center px-6 py-3 text-xs tracking-[0.15em] uppercase" style={{ border: "1px solid rgba(255,255,255,0.5)", color: "#fff", fontWeight: 500 }}>Aktuella tjänster</a>
+            <a href="#contact" className="block text-center px-6 py-3 text-xs tracking-[0.15em] uppercase" style={{ border: "1px solid rgba(255,255,255,0.5)", color: "#fff", fontWeight: 500 }}>För kandidater</a>
           </div>
         </div>
       </section>
@@ -215,11 +215,11 @@ export default function Home() {
               <p className="text-sm leading-relaxed mb-10" style={{ color: "#999", fontWeight: 400 }}>
                 Kontakta Andreas eller Carin direkt. Ärlig rådgivning, utan förpliktelser.
               </p>
-              <div className="flex flex-wrap gap-4">
-                <a href="mailto:nilsson@enoem.se" className="px-8 py-3.5 text-xs tracking-[0.15em] uppercase hover:opacity-80" style={{ backgroundColor: "#D02C2B", color: "#fff", fontWeight: 600 }}>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <a href="mailto:nilsson@enoem.se" className="block text-center px-8 py-3.5 text-xs tracking-[0.15em] uppercase hover:opacity-80" style={{ backgroundColor: "#D02C2B", color: "#fff", fontWeight: 600 }}>
                   Kontakta Andreas
                 </a>
-                <a href="mailto:mossberger@enoem.se" className="px-8 py-3.5 text-xs tracking-[0.15em] uppercase hover:opacity-80" style={{ border: "1px solid #CCC", color: "#333", fontWeight: 600 }}>
+                <a href="mailto:mossberger@enoem.se" className="block text-center px-8 py-3.5 text-xs tracking-[0.15em] uppercase hover:opacity-80" style={{ border: "1px solid #CCC", color: "#333", fontWeight: 600 }}>
                   Kontakta Carin
                 </a>
               </div>
