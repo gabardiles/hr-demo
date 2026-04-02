@@ -182,7 +182,7 @@ export default function Home() {
                 <div className="flex items-center gap-3 mb-5">
                   <span
                     className="text-xs font-semibold tracking-wider uppercase px-2.5 py-1"
-                    style={{ backgroundColor: "#E8EDF1", color: "#1B2A3D" }}
+                    style={{ backgroundColor: "rgba(208,44,43,0.1)", color: "#D02C2B" }}
                   >
                     {item.tag}
                   </span>
@@ -251,7 +251,7 @@ export default function Home() {
                 <span
                   key={i}
                   className="block w-2 h-2 rounded-full"
-                  style={{ backgroundColor: i === 0 ? "#1B2A3D" : "#C4C4C4" }}
+                  style={{ backgroundColor: i === 0 ? "#D02C2B" : "#C4C4C4" }}
                 />
               ))}
             </div>
@@ -281,7 +281,7 @@ export default function Home() {
               <div key={svc.id} className="bg-white p-10">
                 <p
                   className="text-xs font-mono mb-4"
-                  style={{ color: "#9CA3AF" }}
+                  style={{ color: "#D02C2B" }}
                 >
                   0{i + 1}
                 </p>
@@ -388,14 +388,14 @@ export default function Home() {
               <a
                 href="mailto:nilsson@enoem.se"
                 className="px-8 py-3.5 text-sm font-semibold tracking-wide uppercase transition-colors hover:opacity-90"
-                style={{ backgroundColor: "#1B2A3D", color: "#fff" }}
+                style={{ backgroundColor: "#D02C2B", color: "#fff" }}
               >
                 Contact Andreas
               </a>
               <a
                 href="mailto:mossberger@enoem.se"
                 className="px-8 py-3.5 text-sm font-semibold tracking-wide uppercase transition-colors"
-                style={{ border: "1px solid #1B2A3D", color: "#1B2A3D" }}
+                style={{ border: "1px solid #D02C2B", color: "#D02C2B" }}
               >
                 Contact Carin
               </a>

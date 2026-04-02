@@ -364,14 +364,14 @@ export default function WhoWeAre() {
             <Link
               href="/#contact"
               className="px-8 py-3.5 text-sm font-semibold tracking-wide uppercase transition-colors hover:opacity-90"
-              style={{ backgroundColor: "#1B2A3D", color: "#fff" }}
+              style={{ backgroundColor: "#D02C2B", color: "#fff" }}
             >
               Get in Touch
             </Link>
             <Link
               href="/"
               className="px-8 py-3.5 text-sm font-semibold tracking-wide uppercase transition-colors"
-              style={{ border: "1px solid #1B2A3D", color: "#1B2A3D" }}
+              style={{ border: "1px solid #D02C2B", color: "#D02C2B" }}
             >
               Back to Home
             </Link>

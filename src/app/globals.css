@@ -3,10 +3,11 @@
 :root {
   --navy: #1B2A3D;
   --light-bg: #E8EDF1;
+  --brand-red: #D02C2B;
 }
 
 body {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
   color: #1B2A3D;
   background: #fff;
 }

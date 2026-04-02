@@ -7,6 +7,9 @@ export default function Header() {
 
   return (
     <header style={{ backgroundColor: "#1B2A3D" }} className="fixed top-0 left-0 right-0 z-50">
+      {/* Red accent line at very top */}
+      <div style={{ height: "3px", backgroundColor: "#D02C2B" }} />
+
       <div className="flex items-center justify-between px-6 py-5">
         <Link href="/" className="text-white text-lg font-bold tracking-[0.3em]">
           ENOEM
