@@ -1,57 +1,50 @@
+"use client";
+import { useState } from "react";
 import Link from "next/link";
 
 export default function Header() {
+  const [open, setOpen] = useState(false);
+
   return (
-    <header className="bg-navy text-white sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link href="/" className="flex flex-col leading-tight group">
-            <span className="text-2xl font-bold tracking-[0.25em] text-white group-hover:text-accent-light transition-colors">
-              ENOEM
-            </span>
-            <span className="text-[10px] tracking-widest text-white/60 uppercase font-medium">
-              Nilsson &amp; Mossberger
-            </span>
-          </Link>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            <Link
-              href="/#services"
-              className="text-sm font-medium tracking-wide text-white/80 hover:text-white transition-colors uppercase"
-            >
-              Services
-            </Link>
-            <Link
-              href="/who-we-are"
-              className="text-sm font-medium tracking-wide text-white/80 hover:text-white transition-colors uppercase"
-            >
-              Who We Are
-            </Link>
-            <Link
-              href="/#assignments"
-              className="text-sm font-medium tracking-wide text-white/80 hover:text-white transition-colors uppercase"
-            >
-              Assignments
-            </Link>
-            <Link
-              href="/#contact"
-              className="ml-4 px-5 py-2 border border-white/40 text-sm font-medium tracking-wide text-white hover:bg-white hover:text-navy transition-colors uppercase"
-            >
-              Contact
-            </Link>
-          </nav>
-
-          {/* Mobile: show contact link only */}
-          <Link
-            href="/#contact"
-            className="md:hidden text-sm font-medium tracking-wide text-white/80 hover:text-white transition-colors uppercase"
-          >
-            Contact
-          </Link>
-        </div>
+    <header style={{ backgroundColor: "#1B2A3D" }} className="fixed top-0 left-0 right-0 z-50">
+      <div className="flex items-center justify-between px-6 py-5">
+        <Link href="/" className="text-white text-lg font-bold tracking-[0.3em]">
+          ENOEM
+        </Link>
+        <button
+          onClick={() => setOpen(!open)}
+          aria-label="Toggle menu"
+          className="flex flex-col gap-[5px] cursor-pointer p-1"
+        >
+          <span className="block w-6 h-[1.5px] bg-white" />
+          <span className="block w-6 h-[1.5px] bg-white" />
+          <span className="block w-6 h-[1.5px] bg-white" />
+        </button>
       </div>
+
+      {open && (
+        <nav
+          style={{ backgroundColor: "#1B2A3D", borderTop: "1px solid rgba(255,255,255,0.1)" }}
+          className="px-6 py-8 flex flex-col gap-6"
+        >
+          {[
+            { label: "Home", href: "/" },
+            { label: "Who We Are", href: "/who-we-are" },
+            { label: "Services", href: "/#services" },
+            { label: "Assignments", href: "/#assignments" },
+            { label: "Contact", href: "/#contact" },
+          ].map(({ label, href }) => (
+            <Link
+              key={label}
+              href={href}
+              className="text-white/70 hover:text-white text-sm tracking-[0.2em] uppercase transition-colors"
+              onClick={() => setOpen(false)}
+            >
+              {label}
+            </Link>
+          ))}
+        </nav>
+      )}
     </header>
   );
 }
