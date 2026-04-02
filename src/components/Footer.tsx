@@ -107,7 +107,7 @@ export default function Footer() {
           className="pt-8 text-xs"
           style={{ borderTop: "1px solid rgba(255,255,255,0.1)", color: "rgba(255,255,255,0.35)" }}
         >
-          © {new Date().getFullYear()} Enoem AB — Nilsson &amp; Mossberger
+          © 2026 Enoem AB — Nilsson &amp; Mossberger
         </div>
       </div>
     </footer>
