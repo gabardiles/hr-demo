@@ -10,9 +10,9 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Enoem — Strategic HR",
+  title: "Enoem — Strategisk Rekrytering, Analys & Utveckling",
   description:
-    "Enoem (Nilsson & Mossberger) is a leading HR and recruitment company based in Halmstad, Sweden. We specialise in Search, Recruitment, Analysis (SHL), and Individual & Group Development (IPU).",
+    "Enoem (Nilsson & Mossberger) är ett ledande HR- och rekryteringsföretag i Halmstad. Vi erbjuder Search, Rekrytering, Analys (SHL) och Utveckling (IPU).",
 };
 
 export default function RootLayout({
@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`h-full ${geist.variable}`}>
+    <html lang="sv" className={`h-full ${geist.variable}`}>
       <body className="min-h-full flex flex-col antialiased">
         <Header />
         <main className="flex-1 pt-[60px]">{children}</main>
