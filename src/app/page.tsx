@@ -22,11 +22,13 @@ const services = [
   { id: "utveckling", title: "Utveckling", tagline: "Individ- & grupputveckling", description: "Med IPU:s pedagogiska dialogverktyg arbetar vi med beteende, drivkrafter och emotionell intelligens." },
 ];
 
-const assignments = [
-  { title: "Projektledare", location: "Halmstad", industry: "Bygg & Infrastruktur" },
-  { title: "Affärscontroller", location: "Göteborg", industry: "Ekonomi & Handel" },
-  { title: "Servicetekniker", location: "Malmö", industry: "Teknik & Underhåll" },
-  { title: "Exportsäljare", location: "Stockholm", industry: "Försäljning & Affärsutveckling" },
+const vacancies = [
+  "Transportledare",
+  "Miljö- och Hållbarhetsspecialist",
+  "Erfaren Projektledare",
+  "Erfaren Säljare inom Medtech/Pharma",
+  "Affärscontroller",
+  "Spontanansökan",
 ];
 
 export default function Home() {
@@ -168,33 +170,32 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Assignments */}
+      {/* Job vacancies — Plesner style */}
       <section id="assignments" className="bg-white py-28">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <FadeIn>
-            <h2 className="text-4xl lg:text-5xl mb-12" style={{ color: "#111", fontWeight: 200, letterSpacing: "-0.03em" }}>
-              Aktuella uppdrag
+            <h2 className="text-4xl lg:text-5xl mb-16" style={{ color: "#111", fontWeight: 200, letterSpacing: "-0.03em" }}>
+              Lediga tjänster
             </h2>
           </FadeIn>
-          <div style={{ borderTop: "1px solid #EBEBEB" }}>
-            {assignments.map((a, i) => (
-              <FadeIn key={a.title} delay={i * 0.1}>
-                <div className="flex items-center justify-between py-6 cursor-pointer group" style={{ borderBottom: "1px solid #EBEBEB" }}>
-                  <div>
-                    <p className="text-lg" style={{ color: "#111", fontWeight: 300 }}>{a.title}</p>
-                    <p className="text-xs mt-1" style={{ color: "#BBB", fontWeight: 400 }}>{a.industry}</p>
-                  </div>
-                  <div className="flex items-center gap-8">
-                    <span className="text-sm hidden sm:block" style={{ color: "#999" }}>{a.location}</span>
-                    <span className="text-sm group-hover:translate-x-1" style={{ color: "#D02C2B", transition: "transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94)" }}>→</span>
-                  </div>
-                </div>
+          <div>
+            {vacancies.map((title, i) => (
+              <FadeIn key={title} delay={i * 0.08}>
+                <a
+                  href="#"
+                  className="block py-5 group"
+                  style={{ borderBottom: "1px solid #EBEBEB", textDecoration: "none" }}
+                >
+                  <p className="text-base lg:text-lg group-hover:opacity-60" style={{ color: "#111", fontWeight: 300, transition: "opacity 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94)" }}>
+                    {title}
+                  </p>
+                </a>
               </FadeIn>
             ))}
           </div>
-          <FadeIn delay={0.4}>
+          <FadeIn delay={0.5}>
             <div className="mt-10">
-              <span className="link-underline text-xs cursor-pointer" style={{ color: "#111", fontWeight: 600 }}>Visa alla uppdrag</span>
+              <span className="link-underline text-xs cursor-pointer" style={{ color: "#111", fontWeight: 600 }}>Visa alla tjänster</span>
             </div>
           </FadeIn>
         </div>
