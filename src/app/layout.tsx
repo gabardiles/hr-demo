@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist } from "next/font/google";
+import { Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -9,15 +10,16 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
-  title: "Enoem — Strategic Recruitment, Analysis & Development",
+  title: "Enoem — Strategic HR Consultancy",
   description:
-    "Enoem (Nilsson & Mossberger) is a leading HR and recruitment company based in Halmstad, Sweden. We specialise in Search, Recruitment, Analysis (SHL), and Individual & Group Development (IPU). Serving all of Sweden.",
+    "Enoem is a strategic HR consultancy based in Halmstad, Sweden. Search, Recruitment, Analysis and Development — tailored to your needs.",
 };
 
 export default function RootLayout({
@@ -27,10 +29,10 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      lang="sv"
+      className={`${geistSans.variable} ${playfair.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col bg-bg-light text-navy">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
