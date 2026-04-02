@@ -3,16 +3,25 @@ import Link from "next/link";
 import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 
-const pillars = [
-  { number: "01", title: "Kundpartnerskap", description: "Vi hittar upplägget som möter era specifika behov och önskemål. Hela rekryteringsprocessen eller delar av den — vi är flexibla av design.", accent: "Vi arbetar med er, inte bara för er." },
-  { number: "02", title: "Kandidatfokus", description: "För kandidater erbjuder vi en transparent och professionell process från första kontakt till slutgiltig återkoppling. Vi kommunicerar tydligt och ger ärlig vägledning.", accent: "Respekt. Transparens. Genuin feedback." },
-  { number: "03", title: "Beprövade metoder", description: "Vi använder SHL:s internationellt validerade psykometriska verktyg och IPU:s pedagogiska dialogmetodik. Vi gör inte dessa val lättvindigt — de fungerar.", accent: "SHL-analys · IPU-utvecklingsramverk." },
+const people = [
+  {
+    name: "Andreas Nilsson",
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&h=700&fit=crop&crop=face",
+    bio: "Konsult inom HR sedan 2007. Tidigare arbetat som marknadsanalytiker och projektledare inom internationell tillverkningsindustri. Läst projektledning på IHM och ledarskap på Dale Carnegie. Licensierad inom SHL:s bedömningsinstrument sedan 2007. Behörig IPU-konsult sedan 2012. EQ tillkom 2017. Maskiningenjör som senare skrivit magisteruppsats i psykologi och kandidatuppsats i företagsekonomi.",
+  },
+  {
+    name: "Carin Mossberger",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=700&fit=crop&crop=face",
+    bio: "Konsult inom HR sedan 1999. Tidigare bakgrund från resebranschen. Läst ledarskap och försäljning på Dale Carnegie. Licensierad inom SHL:s bedömningsinstrument sedan 2002. IPU-konsult sedan 2012. EQ-analysen tillkom 2017. Humanist med akademiska meriter inom beteendevetenskap och företagsekonomi.",
+  },
 ];
 
-const testimonials = [
-  { quote: "Enoem hittade en produktionschef åt oss som vi själva letat efter i sex månader. Kvaliteten på matchningen var exceptionell.", author: "Driftchef", company: "Tillverkningsföretag, Halland" },
-  { quote: "Second Opinion-analysen gav vår styrelse trygghet att genomföra en svår rekrytering. Den lyfte fram saker som våra intervjuer inte fångade.", author: "VD", company: "Teknikföretag, Göteborg" },
-  { quote: "Andreas och Carin är uppfriskande ärliga. Ingen överförsäljning. Bara gedigen rådgivning och en process som fungerar.", author: "HR-chef", company: "Detaljhandelsgrupp, Sverige" },
+const pillars = [
+  { number: "01", title: "Search", description: "Effektiv metod för att identifiera och kontakta lämpliga kandidater. Vi har nätverket och kontaktvägarna." },
+  { number: "02", title: "Rekrytering", description: "Vi möter ert behov i hela eller delar av rekryteringsprocessen. Vi utgår från Halmstad och arbetar främst i Halland." },
+  { number: "03", title: "Analys", description: "Second Opinion ger ytterligare en dimension i ert beslut. Analyserna grundar sig på SHL:s välbeprövade metoder." },
+  { number: "04", title: "Utveckling", description: "Individ- och grupputveckling med IPU:s pedagogiska dialogunderlag. Vi arbetar med beteende, drivkrafter och EQ." },
+  { number: "05", title: "Personalfrågor", description: "Genom samarbete med HR-Tjänst AB erbjuder vi specialistkompetens inom bl.a. organisations- och ledarskapsutveckling, arbetsrätt, GDPR och strategiskt HR-arbete." },
 ];
 
 export default function WhoWeAre() {
@@ -29,93 +38,50 @@ export default function WhoWeAre() {
           style={{ filter: "brightness(0.45)" }}
         />
         <div className="relative z-10 w-full max-w-7xl mx-auto px-8 lg:px-16 pb-20">
-          <p className="text-xs tracking-[0.25em] uppercase mb-5" style={{ color: "rgba(255,255,255,0.5)", fontWeight: 400 }}>Enoem · Nilsson &amp; Mossberger</p>
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl" style={{ color: "rgba(255,255,255,0.9)", fontWeight: 200, letterSpacing: "-0.04em" }}>Om oss</h1>
+          <p className="text-xs tracking-[0.25em] uppercase mb-5" style={{ color: "rgba(255,255,255,0.5)", fontWeight: 400 }}>Nilsson &amp; Mossberger</p>
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl" style={{ color: "rgba(255,255,255,0.9)", fontWeight: 200, letterSpacing: "-0.04em" }}>Mer om oss</h1>
         </div>
       </section>
 
       <div style={{ height: "60px", backgroundColor: "#fff" }} />
 
-      {/* Intro — 2 col with portrait */}
+      {/* Intro */}
       <section className="bg-white py-24">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            <FadeIn>
-              <div>
-                <p className="text-xs tracking-[0.25em] uppercase mb-4" style={{ color: "#D02C2B", fontWeight: 600, fontSize: "11px" }}>Vår historia</p>
-                <h2 className="text-4xl lg:text-5xl mb-8" style={{ color: "#111", fontWeight: 200, letterSpacing: "-0.03em" }}>Grundat i Halmstad, 2008</h2>
-                <div className="space-y-4 text-sm leading-relaxed" style={{ color: "#999", fontWeight: 400 }}>
-                  <p>Andreas Nilsson och Carin Mossberger grundade Enoem med en tydlig idé: att HR-konsulting och rekrytering kunde göras bättre — med mer ärlighet, mer noggrannhet och mer genuint engagemang.</p>
-                  <p>Vi startade i Halland, en region vi känner på djupet. Med tiden spred sig vårt arbete över hela Sverige.</p>
-                  <p>Idag betjänar Enoem kunder från Malmö till Stockholm, med samma approach: enkla partnerskap, effektiva metoder och ett åtagande att göra det rätt.</p>
-                </div>
-              </div>
-            </FadeIn>
-            <FadeIn delay={0.2}>
-              <div className="relative hidden lg:block" style={{ height: "480px" }}>
-                <Image
-                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&h=700&fit=crop&crop=face"
-                  alt="Andreas Nilsson"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      {/* Values */}
-      <section style={{ backgroundColor: "#F8F8F8" }} className="py-28">
-        <div className="max-w-7xl mx-auto px-8 lg:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            <FadeIn>
-              <div>
-                <p className="text-xs tracking-[0.25em] uppercase mb-4" style={{ color: "#D02C2B", fontWeight: 600, fontSize: "11px" }}>Våra värderingar</p>
-                <h2 className="text-4xl lg:text-5xl mb-10" style={{ color: "#111", fontWeight: 200, letterSpacing: "-0.03em" }}>Det vi står för</h2>
-                <div className="space-y-8">
-                  {[
-                    { title: "Ärlighet", text: "Vi säger vad vi menar och menar vad vi säger — till kunder, kandidater och varandra." },
-                    { title: "Etik", text: "Varje process vi driver genomförs med full integritet. Kunder får vår ärliga bedömning." },
-                    { title: "Moral", text: "Vi tänker på den långsiktiga effekten av vårt arbete. En bra rekrytering förändrar ett liv." },
-                  ].map(({ title, text }) => (
-                    <div key={title}>
-                      <h3 className="text-base mb-2" style={{ color: "#111", fontWeight: 500 }}>{title}</h3>
-                      <p className="text-sm leading-relaxed" style={{ color: "#999", fontWeight: 400 }}>{text}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </FadeIn>
-            <FadeIn delay={0.2}>
-              <blockquote className="p-12 bg-white">
-                <p className="text-2xl lg:text-3xl leading-relaxed mb-6" style={{ color: "#333", fontWeight: 200, fontStyle: "italic", letterSpacing: "-0.02em" }}>
-                  &ldquo;Tillsammans når vi framgång.&rdquo;
-                </p>
-                <footer>
-                  <p className="text-xs tracking-widest uppercase" style={{ color: "#BBB", fontWeight: 400 }}>Enoems ledord</p>
-                </footer>
-              </blockquote>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      {/* Culture */}
-      <section className="bg-white py-28">
-        <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <FadeIn>
-            <div className="max-w-2xl mx-auto text-center">
-              <p className="text-xs tracking-[0.25em] uppercase mb-4" style={{ color: "#D02C2B", fontWeight: 600, fontSize: "11px" }}>Kultur</p>
-              <h2 className="text-4xl lg:text-5xl mb-8" style={{ color: "#111", fontWeight: 200, letterSpacing: "-0.03em" }}>Små av val. Starka av övertygelse.</h2>
-              <p className="text-sm leading-relaxed mb-4" style={{ color: "#999", fontWeight: 400 }}>Enoem är ett medvetet litet företag. Vi tror att direkta relationer ger bättre resultat än processer i stor skala.</p>
-              <p className="text-sm leading-relaxed" style={{ color: "#999", fontWeight: 400 }}>När ni arbetar med Enoem arbetar ni direkt med Andreas eller Carin. Inga överlämnanden. De ni möter i början är de som gör jobbet.</p>
-            </div>
+            <h2 className="text-4xl lg:text-5xl mb-8" style={{ color: "#111", fontWeight: 200, letterSpacing: "-0.03em" }}>
+              Välkommen till Nilsson &amp; Mossberger
+            </h2>
+            <p className="text-base leading-relaxed max-w-3xl mb-4" style={{ color: "#999", fontWeight: 400 }}>
+              Nilsson &amp; Mossberger grundades i Halmstad år 2008 av Andreas Nilsson och Carin Mossberger. Ärlighet, etik och moral är viktigt för oss i såväl affärsrelationer som i det dagliga.
+            </p>
+            <p className="text-base leading-relaxed max-w-3xl" style={{ color: "#999", fontWeight: 400 }}>
+              Det ska upplevas enkelt och effektivt att samarbeta med oss. Vi har lång erfarenhet av att rekrytera och utvärdera nyckelpersoner till olika tjänster inom olika branscher. Tillsammans hittar vi ett upplägg som möter ert behov och era önskemål.
+            </p>
           </FadeIn>
         </div>
       </section>
 
-      {/* The Enoem Way */}
+      {/* People — real bios */}
+      <section style={{ backgroundColor: "#F8F8F8" }} className="py-28">
+        <div className="max-w-7xl mx-auto px-8 lg:px-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
+            {people.map((p, i) => (
+              <FadeIn key={p.name} delay={i * 0.2}>
+                <div>
+                  <div className="relative mb-8" style={{ height: "500px" }}>
+                    <Image src={p.image} alt={p.name} fill className="object-cover" />
+                  </div>
+                  <h3 className="text-2xl mb-4" style={{ color: "#111", fontWeight: 200 }}>{p.name}</h3>
+                  <p className="text-sm leading-relaxed" style={{ color: "#999", fontWeight: 400 }}>{p.bio}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our services — all 5 including Personalfrågor */}
       <section className="relative" style={{ minHeight: "600px" }}>
         <Image
           src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1800&h=800&fit=crop"
@@ -126,17 +92,18 @@ export default function WhoWeAre() {
         />
         <div className="relative z-10 max-w-7xl mx-auto px-8 lg:px-16 py-28">
           <FadeIn>
-            <p className="text-xs tracking-[0.25em] uppercase mb-4" style={{ color: "#D02C2B", fontWeight: 600, fontSize: "11px" }}>Enoems arbetssätt</p>
-            <h2 className="text-4xl lg:text-5xl text-white mb-16" style={{ fontWeight: 200, letterSpacing: "-0.03em" }}>Så här närmar vi oss varje uppdrag</h2>
+            <p className="text-xs tracking-[0.25em] uppercase mb-4" style={{ color: "#D02C2B", fontWeight: 600, fontSize: "11px" }}>Våra tjänster</p>
+            <h2 className="text-4xl lg:text-5xl text-white mb-16" style={{ fontWeight: 200, letterSpacing: "-0.03em" }}>
+              Vi rekryterar, analyserar och utvecklar kompetens
+            </h2>
           </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-10">
             {pillars.map((p, i) => (
-              <FadeIn key={p.number} delay={i * 0.15}>
+              <FadeIn key={p.number} delay={i * 0.1}>
                 <div>
-                  <p className="text-4xl font-mono mb-6" style={{ color: "#D02C2B", fontWeight: 200, opacity: 0.5 }}>{p.number}</p>
-                  <h3 className="text-xl text-white mb-4" style={{ fontWeight: 300 }}>{p.title}</h3>
-                  <p className="text-sm leading-relaxed mb-4" style={{ color: "rgba(255,255,255,0.6)", fontWeight: 400 }}>{p.description}</p>
-                  <p className="text-xs" style={{ color: "rgba(255,255,255,0.35)", fontWeight: 600 }}>{p.accent}</p>
+                  <p className="text-3xl font-mono mb-4" style={{ color: "#D02C2B", fontWeight: 200, opacity: 0.5 }}>{p.number}</p>
+                  <h3 className="text-lg text-white mb-3" style={{ fontWeight: 300 }}>{p.title}</h3>
+                  <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.5)", fontWeight: 400 }}>{p.description}</p>
                 </div>
               </FadeIn>
             ))}
@@ -144,48 +111,33 @@ export default function WhoWeAre() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section style={{ backgroundColor: "#F8F8F8" }} className="py-28">
+      {/* Values */}
+      <section className="bg-white py-28">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <FadeIn>
-            <p className="text-xs tracking-[0.25em] uppercase mb-4" style={{ color: "#BBB", fontWeight: 600, fontSize: "11px" }}>Kundröster</p>
-            <h2 className="text-4xl lg:text-5xl mb-16" style={{ color: "#111", fontWeight: 200, letterSpacing: "-0.03em" }}>Vad våra kunder säger</h2>
+            <div className="max-w-2xl mx-auto text-center">
+              <p className="text-xs tracking-[0.25em] uppercase mb-4" style={{ color: "#D02C2B", fontWeight: 600, fontSize: "11px" }}>Våra värderingar</p>
+              <h2 className="text-4xl lg:text-5xl mb-8" style={{ color: "#111", fontWeight: 200, letterSpacing: "-0.03em" }}>
+                Ärlighet, etik och moral
+              </h2>
+              <p className="text-base leading-relaxed" style={{ color: "#999", fontWeight: 400 }}>
+                Ärlighet, etik och moral är viktigt för oss i såväl affärsrelationer som i det dagliga. Om ni vill tar vi ansvar för hela processen eller så stöttar vi er i vissa delar. Vi utgår från Halmstad men har Sverige som arbetsområde.
+              </p>
+            </div>
           </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((t, i) => (
-              <FadeIn key={t.author} delay={i * 0.15}>
-                <blockquote className="bg-white p-10">
-                  <p className="text-base leading-relaxed mb-8" style={{ color: "#333", fontWeight: 300, fontStyle: "italic" }}>&ldquo;{t.quote}&rdquo;</p>
-                  <footer>
-                    <p className="text-xs" style={{ color: "#111", fontWeight: 600 }}>{t.author}</p>
-                    <p className="text-xs" style={{ color: "#BBB" }}>{t.company}</p>
-                  </footer>
-                </blockquote>
-              </FadeIn>
-            ))}
-          </div>
-          <div className="flex gap-2.5 mt-10">
-            {[0,1,2,3].map((i) => (
-              <span key={i} className="block w-2 h-2 rounded-full" style={{ backgroundColor: i === 0 ? "#D02C2B" : "#DDD" }} />
-            ))}
-          </div>
         </div>
       </section>
 
-      {/* Founder quote */}
-      <section className="bg-white py-28">
+      {/* Quote + CTA */}
+      <section style={{ backgroundColor: "#F8F8F8" }} className="py-28">
         <div className="max-w-4xl mx-auto px-8 lg:px-16 text-center">
           <FadeIn>
-            <blockquote>
-              <p className="text-2xl lg:text-3xl leading-relaxed mb-8" style={{ color: "#333", fontWeight: 200, fontStyle: "italic", letterSpacing: "-0.02em" }}>
-                &ldquo;Varje placering påverkar riktiga människors liv — kandidaten, deras familj, teamet de ansluter sig till. Det ansvaret driver hur vi arbetar.&rdquo;
+            <blockquote className="mb-12">
+              <p className="text-3xl lg:text-4xl leading-relaxed" style={{ color: "#111", fontWeight: 200, letterSpacing: "-0.03em" }}>
+                Tillsammans når vi framgång
               </p>
-              <footer>
-                <p className="text-sm" style={{ color: "#111", fontWeight: 600 }}>Andreas Nilsson</p>
-                <p className="text-sm" style={{ color: "#BBB" }}>Medgrundare, Enoem</p>
-              </footer>
             </blockquote>
-            <div className="flex flex-wrap justify-center gap-4 mt-12">
+            <div className="flex flex-wrap justify-center gap-4">
               <Link href="/#contact" className="px-8 py-3.5 text-xs tracking-[0.15em] uppercase hover:opacity-80" style={{ backgroundColor: "#D02C2B", color: "#fff", fontWeight: 600 }}>Kontakta oss</Link>
               <Link href="/" className="px-8 py-3.5 text-xs tracking-[0.15em] uppercase hover:opacity-80" style={{ border: "1px solid #CCC", color: "#333", fontWeight: 600 }}>Tillbaka till startsidan</Link>
             </div>
